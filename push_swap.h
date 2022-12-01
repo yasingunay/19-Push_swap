@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:31:50 by ygunay            #+#    #+#             */
-/*   Updated: 2022/11/30 16:40:18 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/12/01 11:57:18 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,21 @@
 # include "../19-ft_printf/ft_printf.h"
 
 # include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+
+# define INT_MIN -2147483648
+# define INT_MAX 2147483647
+
+
+typedef struct s_data
+{
+	int				value;
+	int				index;
+	struct s_node	*link;
+}	t_data;
+
+
 
 void	ft_error(char *error);
 
