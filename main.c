@@ -6,12 +6,11 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:30:01 by ygunay            #+#    #+#             */
-/*   Updated: 2022/12/02 12:26:22 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/12/07 17:42:58 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 	void add_at_end(t_data *head, int number, int size)
 	{
@@ -29,7 +28,7 @@
 	}
 
 
-	int number_count(char **av)
+	int arg_number(char **av)
 	{
 		int i;
 		int size;
@@ -38,47 +37,55 @@
 		size =0 ;
 		while(av[i])
 			i++;
-		size = i -1;
-		//printf("%d\n",size);
+		size = i;
+		printf("argument number %d\n",size);
 		return (size);
 	}
 
-
+	void dup_check(char **av)
+	{
+	 int i;
+	 i = 1;
+	
+	 int j;
+	 
+		while(av[i] != NULL)
+			{	
+				j=1;
+				while(av[i +j] != NULL)
+				{
+					if(ft_atoi(av[i])== ft_atoi(av[i + j]))
+						ft_error("duplicated number\n");
+					
+					j++;
+				}
+				i++;
+			}
+		
+	}
 
 int	main(int ac, char **av)
 {
 	t_data	*stack_a;
 	int i = 2;
-	//t_data 	*current;
-
-	// char	**args = NULL;
 
 	if (ac < 2)
 		return (0);
-	// if (ac == 2)
-	// {
-	// 	args = ft_split(av[1],' ');
-	// }
 	
 	stack_a = (t_data *)malloc(sizeof(t_data));
 	stack_a->value = ft_atoi(av[1]);
 	stack_a->link = NULL;
 	while(av[i])
 	{
-		add_at_end(stack_a,ft_atoi(av[i]),number_count(av));
+		add_at_end(stack_a,ft_atoi(av[i]),(arg_number(av) - 2));
 		i++;
 	}
-		
+	dup_check(av);	
+	ft_printf("%d\n", stack_a->link->link->value);
 
-	// current = (t_data *)malloc(sizeof(t_data));
-	// current->value = ft_atoi(av[2]);
-	// current->link = NULL;
-	// head->link = current;
-	
-
-	
-	ft_printf("%d\n", stack_a->link->value);
-	
+	//system("leaks push_swap");
+	exit(0);
 	return (0);
 }
+
 
