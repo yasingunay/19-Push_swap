@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:30:01 by ygunay            #+#    #+#             */
-/*   Updated: 2022/12/07 17:42:58 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/12/08 10:08:01 by yasingunay       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@
 		while(av[i])
 			i++;
 		size = i;
-		printf("argument number %d\n",size);
 		return (size);
 	}
 

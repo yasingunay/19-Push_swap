@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:31:50 by ygunay            #+#    #+#             */
-/*   Updated: 2022/12/02 10:15:57 by ygunay           ###   ########.fr       */
+/*   Updated: 2022/12/08 10:06:18 by yasingunay       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../19-Libft/libft.h"
-# include "../19-ft_printf/ft_printf.h"
+# include "libft/libft.h"
+# include "ft_printf/ft_printf.h"
 
 # include <unistd.h>
 # include <stdio.h>
