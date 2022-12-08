@@ -6,16 +6,16 @@
 /*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:30:01 by ygunay            #+#    #+#             */
-/*   Updated: 2022/12/08 13:58:41 by yasingunay       ###   ########.fr       */
+/*   Updated: 2022/12/08 14:47:26 by yasingunay       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
 
-	void dup_check(char **av)
+	void dup_check(char **av, int first)
 	{
 	 int i;
-	 i = 1;
+	 i = first;
 	
 	 int j;
 	 
@@ -105,8 +105,9 @@ int main(int ac, char **av)
 			i++;
 		}
 		//printf("%d\n",ft_atoi(args[1]));
-		dup_check(args);
+		dup_check(args,0);
 		print_list(a);
+		//printf("%d\n", i);
 			
 	}
 	if (ac > 2)
@@ -124,13 +125,15 @@ int main(int ac, char **av)
 				
 				i++;
 			}
-			dup_check(av);
+			dup_check(av,1);
 			print_list(a);
 		
 	}
+	else
 	
-	system("leaks push_swap");
+	//system("leaks push_swap");
 	exit(0);
 	return (0);
 
 }
+
