@@ -6,7 +6,7 @@
 /*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:30:01 by ygunay            #+#    #+#             */
-/*   Updated: 2022/12/09 15:07:37 by yasingunay       ###   ########.fr       */
+/*   Updated: 2022/12/09 15:15:46 by yasingunay       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ void ft_sa(t_data *a)
 	a->link->value = a->value;
 	a->value = temp;
 	write(1,"sa\n",3);
-	print_list(a);
+	//print_list(a);
 }
 
 int lstsize (t_data *a)
@@ -154,6 +154,9 @@ int main(int ac, char **av)
 	
 	//print_list(a);
 	
+	
+	
+	printf("list size %d\n",lstsize(a));
 	//system("leaks push_swap");
 	exit(0);
 	return (0);
