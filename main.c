@@ -6,7 +6,7 @@
 /*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:30:01 by ygunay            #+#    #+#             */
-/*   Updated: 2022/12/09 11:01:19 by yasingunay       ###   ########.fr       */
+/*   Updated: 2022/12/09 15:07:37 by yasingunay       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ t_data* create_list(int ac, char **av)
 }
 
 
+
 void	dup_check(t_data *a)
 {
 	t_data	*new;
@@ -92,7 +93,45 @@ void	dup_check(t_data *a)
 	}
 }
 
+int is_sorted(t_data *a)
+{
+	while(a->link)
+	{
+		if(a->value > a->link->value)
+			return (0);
+		a = a->link;
+	}
+	
+	return (1);
+}
 
+void ft_sa(t_data *a)
+{
+	int temp;
+	temp = a->link->value;
+	a->link->value = a->value;
+	a->value = temp;
+	write(1,"sa\n",3);
+	print_list(a);
+}
+
+int lstsize (t_data *a)
+{
+	int size;
+	
+	if(a == NULL)
+		ft_error("list is empty\n");
+
+	size =0;
+	t_data *ptr;
+	ptr = a;
+	while(ptr != NULL)
+	{
+		size++;
+		ptr = ptr->link;
+	}
+	return(size);
+}
 
 int main(int ac, char **av)
 {
@@ -104,7 +143,17 @@ int main(int ac, char **av)
 	a = create_list(ac,av);
 	
 	dup_check(a);
-	print_list(a);
+	if(is_sorted(a) == 1)
+		return (0);
+	
+	if(lstsize(a)== 2)
+		ft_sa(a);
+	else
+		printf("ikiden buyuk\n");
+	
+	
+	//print_list(a);
+	
 	//system("leaks push_swap");
 	exit(0);
 	return (0);
