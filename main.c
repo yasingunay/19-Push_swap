@@ -6,33 +6,11 @@
 /*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:30:01 by ygunay            #+#    #+#             */
-/*   Updated: 2022/12/08 14:47:26 by yasingunay       ###   ########.fr       */
+/*   Updated: 2022/12/09 11:01:19 by yasingunay       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
-
-	void dup_check(char **av, int first)
-	{
-	 int i;
-	 i = first;
-	
-	 int j;
-	 
-		while(av[i] != NULL)
-			{	
-				j=1;
-				while(av[i +j] != NULL)
-				{
-					if(ft_atoi(av[i])== ft_atoi(av[i + j]))
-						ft_error("duplicated number\n");
-					
-					j++;
-				}
-				i++;
-			}
-		
-	}
 
 void print_list(t_data *a)
 {
@@ -47,14 +25,6 @@ void print_list(t_data *a)
 	}
 }
 
-int count_ac(char **av)
-{
-	int i = 0;
-	while(av[i])
-		i++;
-	return (i);
-}
-
 
 void add_at_end(t_data *a, int data)
 {
@@ -66,9 +36,7 @@ void add_at_end(t_data *a, int data)
 
 	ptr = a;
 	temp = (t_data *)malloc(sizeof(t_data));
-	
 	temp ->value = data;
-	
 	temp ->link = NULL;
 	
 	while(ptr->link != NULL)
@@ -78,59 +46,65 @@ void add_at_end(t_data *a, int data)
 	
 }
 
+t_data* create_list(int ac, char **av)
+{
+	int row;
+
+	row = 1;
+	if(ac == 2)
+		row = row -1;
+		
+	t_data *a;
+	a = (t_data *)malloc(sizeof(t_data));
+	a->value = ft_atoi(av[row]);
+	a->link = NULL;
+	row++;
+			
+			while(av[row])
+			{
+				add_at_end(a,ft_atoi(av[row]));
+				
+				row++;
+			}
+
+	return (a);
+}
+
+
+void	dup_check(t_data *a)
+{
+	t_data	*new;
+	int		dup;
+
+	while (a)
+	{
+		dup = 0;
+		new = a;
+		while (new)
+		{
+			if (a->value == new->value)
+				dup++;
+			if (dup == 2)
+				ft_error("duplicated number\n");
+			new = new->link;
+		}
+		a = a->link;
+	}
+}
+
+
+
 int main(int ac, char **av)
 {
-	
+	t_data *a;
 	if (ac < 2)
 		return (0);
-		
-	t_data *a; 
-	
 	if (ac == 2)
-	{
-		int size = 0;
-		char **args;
-		args = ft_split(av[1],' ');
-		size = count_ac(args);
-		a = (t_data *)malloc(sizeof(t_data) * size);
-		
-		a->value = ft_atoi(args[0]);
-		a->link = NULL;
-		int i = 1;
-			
-		while(args[i])
-		{
-			add_at_end(a,ft_atoi(args[i]));
-				
-			i++;
-		}
-		//printf("%d\n",ft_atoi(args[1]));
-		dup_check(args,0);
-		print_list(a);
-		//printf("%d\n", i);
-			
-	}
-	if (ac > 2)
-	{
-		int size = 0;
-		size = count_ac(av);
-		a = (t_data *)malloc(sizeof(t_data) * (size -1));
-		a->value = ft_atoi(av[1]);
-		a->link = NULL;
-		int i = 2;
-			
-			while(av[i])
-			{
-				add_at_end(a,ft_atoi(av[i]));
-				
-				i++;
-			}
-			dup_check(av,1);
-			print_list(a);
-		
-	}
-	else
+		av = ft_split(av[1],' ');
+	a = create_list(ac,av);
 	
+	dup_check(a);
+	print_list(a);
 	//system("leaks push_swap");
 	exit(0);
 	return (0);
