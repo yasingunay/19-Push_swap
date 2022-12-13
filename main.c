@@ -6,7 +6,7 @@
 /*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:30:01 by ygunay            #+#    #+#             */
-/*   Updated: 2022/12/12 17:24:21 by yasingunay       ###   ########.fr       */
+/*   Updated: 2022/12/13 13:48:49 by yasingunay       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,7 @@ void print_list(t_data *a)
 }
 
 
-// void sort_three (t_data *a)
-// {
-// 	int big = biggest_number(a);
-// 	int small = smallest_number(a);
 
-// 	while(!is_sorted(a))
-// 	{
-// 		if(a->value = big)
-						
-			
-// 	}	
-// }
 
 
 int main(int ac, char **av)
@@ -57,20 +46,22 @@ int main(int ac, char **av)
 		return (0);
 	
 	if(lstsize(a)== 2)
-		ft_sa(a);
+		ft_sa(&a);
 	else
 	{
 		if(lstsize(a)>= 3)
 		//smallest = 	smallest_number(a);
 		//printf("smallest : %d\n", smallest);
 		//printf("ikiden buyuk\n");
-		ft_ra(a);
+		//ft_ra(&a);
+		//printf("list size %d\n",lstsize(a));
+		sort_three(&a);
 		
 	}
 		
+	print_list(a);
 	
 	
-	//printf("list size %d\n",lstsize(a));
 	//system("leaks push_swap");
 	exit(0);
 	return (0);

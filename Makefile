@@ -6,11 +6,11 @@
 #    By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 15:42:42 by ygunay            #+#    #+#              #
-#    Updated: 2022/12/12 16:23:17 by yasingunay       ###   ########.fr        #
+#    Updated: 2022/12/13 13:49:30 by yasingunay       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		= main.c utils.c operations.c init_numbers.c 
+SRCS		= main.c utils.c operations.c init_numbers.c sort.c
 
 NAME 		= push_swap
 
