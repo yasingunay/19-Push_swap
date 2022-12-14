@@ -6,7 +6,7 @@
 /*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:31:12 by ygunay            #+#    #+#             */
-/*   Updated: 2022/12/14 10:39:38 by yasingunay       ###   ########.fr       */
+/*   Updated: 2022/12/14 11:48:06 by yasingunay       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_error(char *error)
 {
 	write (2, "Error\n", 6);
 	write (2, error, ft_strlen (error));
-	system("leaks push_swap");
+	//system("leaks push_swap");
 	exit(1);
 }
 
@@ -62,6 +62,32 @@ void print_list(t_data *a)
 	{
 		ft_printf("%d ",ptr->value);
 		ptr = ptr->link;
+	}
+}
+
+void check_errors(int ac, char **av)
+{
+	int j;
+	char c;
+	int row;
+
+	row = 1;
+	if(ac == 2)
+		row = row -1;
+	
+	while(av[row])
+	{
+		j = 0;
+		while(av[row][j])
+		{
+			c = av[row][j];
+			
+			if(ft_isdigit(c)  != 1)
+				ft_error("Not digit\n");
+			else
+				j++;
+		}
+		row++;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:31:50 by ygunay            #+#    #+#             */
-/*   Updated: 2022/12/14 10:09:48 by yasingunay       ###   ########.fr       */
+/*   Updated: 2022/12/14 11:46:20 by yasingunay       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ void 	ft_swap(t_data *a);
 void 	sort_three (t_data **a);
 void 	ft_reverse_rotate(t_data **a);
 void 	ft_rra(t_data **a);
+void 	check_errors(int ac, char **av);
 
 #endif
