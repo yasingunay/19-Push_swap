@@ -6,7 +6,7 @@
 /*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:21:33 by yasingunay        #+#    #+#             */
-/*   Updated: 2022/12/12 16:22:42 by yasingunay       ###   ########.fr       */
+/*   Updated: 2022/12/14 10:53:58 by yasingunay       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,3 +76,4 @@ void	dup_check(t_data *a)
 		a = a->link;
 	}
 }
+

@@ -6,7 +6,7 @@
 /*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 13:48:21 by yasingunay        #+#    #+#             */
-/*   Updated: 2022/12/13 13:48:54 by yasingunay       ###   ########.fr       */
+/*   Updated: 2022/12/14 10:36:03 by yasingunay       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,19 @@ void sort_three (t_data **a)
 		ft_sa(a);
 	else if(i > j && i > k && j < k)
 		ft_ra(a);
-	
-	
+	else if(i < j && i > k && j > k)
+		ft_rra(a);
+	else if(i < j && i <k && j > k)
+	{
+		ft_sa(a);
+		ft_ra(a);
+	}
+	else if(i > j && i > k && j > k)
+	{
+		ft_sa(a);
+		ft_rra(a);
+	}
+
 }
+
+

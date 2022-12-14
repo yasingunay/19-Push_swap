@@ -6,35 +6,16 @@
 /*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:30:01 by ygunay            #+#    #+#             */
-/*   Updated: 2022/12/13 13:48:49 by yasingunay       ###   ########.fr       */
+/*   Updated: 2022/12/14 10:54:54 by yasingunay       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
 
-void print_list(t_data *a)
-{
-	if (a == NULL)
-		ft_error("list is empty");
-	t_data *ptr = NULL;
-	ptr = a;
-	while(ptr != NULL)
-	{
-		printf("%d ",ptr->value);
-		ptr = ptr->link;
-	}
-}
-
-
-
-
-
 int main(int ac, char **av)
 {
 	t_data *a;
-	//t_data *b;
-	//int biggest = 0;
-	//int smallest = 0;
+
 	if (ac < 2)
 		return (0);
 	if (ac == 2)
@@ -49,31 +30,15 @@ int main(int ac, char **av)
 		ft_sa(&a);
 	else
 	{
-		if(lstsize(a)>= 3)
-		//smallest = 	smallest_number(a);
-		//printf("smallest : %d\n", smallest);
-		//printf("ikiden buyuk\n");
-		//ft_ra(&a);
-		//printf("list size %d\n",lstsize(a));
-		sort_three(&a);
+		if(lstsize(a)== 3)
+			sort_three(&a);
 		
 	}
 		
 	print_list(a);
-	
 	
 	//system("leaks push_swap");
 	exit(0);
 	return (0);
 
 }
-
-
-
-
-
-
-
-
-
-
