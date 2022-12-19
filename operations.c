@@ -6,7 +6,7 @@
 /*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:14:30 by yasingunay        #+#    #+#             */
-/*   Updated: 2022/12/14 10:27:51 by yasingunay       ###   ########.fr       */
+/*   Updated: 2022/12/19 16:56:18 by yasingunay       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,32 @@ void ft_reverse_rotate(t_data **a)
 	*a = last;
 	
 }
+
+void ft_push(t_data **a, t_data **b)
+{
+	t_data *tmp;
+	if(!a || !*a)
+		return;
+	tmp = *a;
+	*a = (*a)->link;
+	tmp->link = *b;
+	*b = tmp;
+	
+}
  
+
+void	ft_pb(t_data **a, t_data **b)
+{
+	ft_push(a, b);
+	write(1, "pb\n", 3);
+}
+
+void	ft_pa(t_data **a, t_data **b)
+{
+	ft_push(b, a);
+	write(1, "pa\n", 3);
+}
+
 void	ft_ra(t_data **a)
 {
 	ft_rotate(a);

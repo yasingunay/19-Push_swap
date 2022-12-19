@@ -6,7 +6,7 @@
 /*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:30:01 by ygunay            #+#    #+#             */
-/*   Updated: 2022/12/14 11:41:22 by yasingunay       ###   ########.fr       */
+/*   Updated: 2022/12/19 17:13:06 by yasingunay       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 int main(int ac, char **av)
 {
 	t_data *a;
+	t_data *b;
+
+	b = NULL;
 
 	if (ac < 2)
 		return (0);
@@ -29,14 +32,32 @@ int main(int ac, char **av)
 	
 	if(lstsize(a)== 2)
 		ft_sa(&a);
-	else
+	else if(lstsize(a)== 3)
+		sort_three(&a);
+	else if(lstsize(a)== 4)
 	{
-		if(lstsize(a)== 3)
-			sort_three(&a);
-		
+		while(a->value != smallest_number(a))
+			ft_ra(&a);
+		ft_pb(&a, &b);
+		sort_three(&a);
+		ft_pa(&a,&b);
+	}
+	else if(lstsize(a)== 5)
+	{
+		while(a->value != smallest_number(a))
+			ft_ra(&a);
+		ft_pb(&a, &b);
+		while(a->value != smallest_number(a))
+			ft_ra(&a);
+		ft_pb(&a, &b);
+		sort_three(&a);
+		ft_pa(&a,&b);
+		ft_pa(&a,&b);
 	}
 		
+		
 	print_list(a);
+	
 	
 	//system("leaks push_swap");
 	exit(0);
