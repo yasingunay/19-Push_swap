@@ -6,11 +6,25 @@
 /*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:30:01 by ygunay            #+#    #+#             */
-/*   Updated: 2022/12/19 17:13:06 by yasingunay       ###   ########.fr       */
+/*   Updated: 2022/12/23 12:01:17 by yasingunay       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
+
+int find_index(t_data *head, int nb)
+{
+	int index = 1;
+	t_data *current = head;
+	while (current != NULL)
+	{
+		if(current->value == nb)
+			return index;
+		index++;
+		current = current->link;
+	}
+	return (-1);
+}
 
 int main(int ac, char **av)
 {
@@ -36,19 +50,54 @@ int main(int ac, char **av)
 		sort_three(&a);
 	else if(lstsize(a)== 4)
 	{
-		while(a->value != smallest_number(a))
-			ft_ra(&a);
+		int i = 0;
+		i = find_index(a,smallest_number(a));
+		if(i >= 3)
+		{
+			while(a->value != smallest_number(a))
+				ft_rra(&a);
+		}
+		else
+		{
+			while(a->value != smallest_number(a))
+				ft_ra(&a);
+		}
+		
 		ft_pb(&a, &b);
 		sort_three(&a);
 		ft_pa(&a,&b);
 	}
 	else if(lstsize(a)== 5)
 	{
-		while(a->value != smallest_number(a))
-			ft_ra(&a);
+		
+		int i = 0;
+		i = find_index(a,smallest_number(a));
+		printf("index %d\n",i);
+		if(i >= 3)
+		{
+			while(a->value != smallest_number(a))
+				ft_rra(&a);
+		}
+		else
+		{
+			while(a->value != smallest_number(a))
+				ft_ra(&a);
+		}
+		
 		ft_pb(&a, &b);
-		while(a->value != smallest_number(a))
-			ft_ra(&a);
+		i = 0;
+		i = find_index(a,smallest_number(a));
+		if(i >= 3)
+		{
+			while(a->value != smallest_number(a))
+				ft_rra(&a);
+		}
+		else
+		{
+			while(a->value != smallest_number(a))
+				ft_ra(&a);
+		}
+		
 		ft_pb(&a, &b);
 		sort_three(&a);
 		ft_pa(&a,&b);
