@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:30:01 by ygunay            #+#    #+#             */
-/*   Updated: 2022/12/23 12:01:17 by yasingunay       ###   ########.fr       */
+/*   Updated: 2023/01/13 15:56:18 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,67 @@ int find_index(t_data *head, int nb)
 	}
 	return (-1);
 }
+
+
+void	fill_index(t_data **a)
+{
+	t_data	*first;
+	t_data	*cp_a;
+	int		i;
+
+	first = *a;
+	cp_a = *a;
+	while (*a)
+	{
+		cp_a = first;
+		i = 0;
+		while (cp_a)
+		{
+			if ((*a)->value > cp_a->value)
+				i++;
+			if ((*a)->index != i)
+				(*a)->index = i;
+			if (!cp_a->link)
+				break ;
+			cp_a = cp_a->link;
+		}
+		*a = (*a)->link;
+	}
+	*a = first;
+}
+
+
+
+
+void	ft_radix(t_data **a, t_data **b)
+{
+	t_data	*num;
+	int		len;
+	int		max_bits;
+	int		i;
+	int		j;
+
+	len = lstsize(*a);
+	max_bits = 0;
+	while ((len - 1) >> max_bits != 0)
+		max_bits++;
+	i = -1;
+	while (++i < max_bits)
+	{
+		j = -1;
+		while (++j < len)
+		{
+			num = *a;
+			if (((num->index >> i) & 1) == 1)
+				ft_ra(a);
+			else
+				ft_pb(a, b);
+		}
+		while (*b)
+			ft_pa(a, b);
+	}
+}
+
 
 int main(int ac, char **av)
 {
@@ -72,7 +133,6 @@ int main(int ac, char **av)
 		
 		int i = 0;
 		i = find_index(a,smallest_number(a));
-		printf("index %d\n",i);
 		if(i >= 3)
 		{
 			while(a->value != smallest_number(a))
@@ -103,9 +163,17 @@ int main(int ac, char **av)
 		ft_pa(&a,&b);
 		ft_pa(&a,&b);
 	}
+	
+
+	else if(lstsize(a)> 5)
+	{
+		fill_index(&a);	
+		ft_radix(&a,&b);
+		
+	}
 		
 		
-	print_list(a);
+	//print_list(a);
 	
 	
 	//system("leaks push_swap");

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasingunay <yasingunay@student.42.fr>      +#+  +:+       +#+        */
+/*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:31:50 by ygunay            #+#    #+#             */
-/*   Updated: 2022/12/19 16:56:26 by yasingunay       ###   ########.fr       */
+/*   Updated: 2023/01/13 11:15:10 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 typedef struct s_data
 {
 	int				value;
+	int				index;
 	struct s_data	*link;
 }	t_data;
 
