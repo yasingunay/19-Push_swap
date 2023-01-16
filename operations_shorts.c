@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   operations_shorts.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 15:30:01 by ygunay            #+#    #+#             */
-/*   Updated: 2023/01/16 14:12:02 by ygunay           ###   ########.fr       */
+/*   Created: 2023/01/16 14:10:46 by ygunay            #+#    #+#             */
+/*   Updated: 2023/01/16 14:11:11 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_pb(t_data **a, t_data **b)
 {
-	t_data	*a;
-	t_data	*b;
+	ft_push(a, b);
+	write(1, "pb\n", 3);
+}
 
-	b = NULL;
-	if (ac < 2)
-		return (0);
-	if (ac == 2)
-		av = ft_split(av[1], ' ');
-	check_errors(ac, av);
-	a = create_list(ac, av);
-	fill_index(&a);
-	dup_check(a);
-	if (is_sorted(a) == 1)
-		return (0);
-	sort_list(&a, &b);
-	print_list(a);
-	//system("leaks push_swap");
-	exit(0);
-	return (0);
+void	ft_pa(t_data **a, t_data **b)
+{
+	ft_push(b, a);
+	write(1, "pa\n", 3);
+}
+
+void	ft_ra(t_data **a)
+{
+	ft_rotate(a);
+	write(1, "ra\n", 3);
+}
+
+void	ft_sa(t_data **a)
+{
+	ft_swap(*a);
+	write(1, "sa\n", 3);
+}
+
+void	ft_rra(t_data **a)
+{
+	ft_reverse_rotate(a);
+	write(1, "rra\n", 4);
 }

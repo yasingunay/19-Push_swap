@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:31:12 by ygunay            #+#    #+#             */
-/*   Updated: 2023/01/13 15:13:13 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/16 14:13:59 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_error(char *error)
 {
 	write (2, "Error\n", 6);
 	write (2, error, ft_strlen (error));
-	//system("leaks push_swap");
 	exit(1);
 }
 
@@ -91,22 +90,7 @@ void check_errors(int ac, char **av)
 	}
 }
 
-// int biggest_number(t_data *a)
-// {
-// 	int big;
 
-// 	big = 0;
-
-// 	big = a->value;
-// 	while(a)
-// 	{
-// 		if(a->value > big)
-// 			big = a->value;
-// 		a = a->link;
-// 	}
-	
-// 	return(big);
-// }
 
 int smallest_number(t_data *a)
 {
@@ -123,4 +107,18 @@ int smallest_number(t_data *a)
 	}
 	
 	return(small);
+}
+
+int find_index(t_data *head, int nb)
+{
+	int index = 1;
+	t_data *current = head;
+	while (current != NULL)
+	{
+		if(current->value == nb)
+			return index;
+		index++;
+		current = current->link;
+	}
+	return (-1);
 }
