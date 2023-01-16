@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:31:12 by ygunay            #+#    #+#             */
-/*   Updated: 2023/01/16 14:13:59 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/16 16:06:43 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,106 +19,65 @@ void	ft_error(char *error)
 	exit(1);
 }
 
-
-int lstsize (t_data *a)
+int	lstsize(t_data *a)
 {
-	int size;
-	
-	if(a == NULL)
-		ft_error("list is empty\n");
+	int		size;
+	t_data	*ptr;
 
-	size =0;
-	t_data *ptr;
+	if (a == NULL)
+		ft_error("list is empty\n");
+	size = 0;
 	ptr = a;
-	while(ptr != NULL)
+	while (ptr != NULL)
 	{
 		size++;
 		ptr = ptr->link;
 	}
-	return(size);
+	return (size);
 }
 
-
-int is_sorted(t_data *a)
+int	smallest_number(t_data *a)
 {
-	while(a->link)
-	{
-		if(a->value > a->link->value)
-			return (0);
-		a = a->link;
-	}
-	
-	return (1);
-}
-
-void print_list(t_data *a)
-{
-	if (a == NULL)
-		ft_error("list is empty");
-	t_data *ptr = NULL;
-	ptr = a;
-	while(ptr != NULL)
-	{
-		ft_printf("%d ",ptr->value);
-		ptr = ptr->link;
-	}
-}
-
-void check_errors(int ac, char **av)
-{
-	int j;
-	char c;
-	int row;
-
-	row = 1;
-	if(ac == 2)
-		row = row -1;
-	
-	while(av[row])
-	{
-		j = 0;
-		while(av[row][j])
-		{
-			c = av[row][j];
-			
-			if(ft_isdigit(c)  != 1)
-				ft_error("Not digit\n");
-			else
-				j++;
-		}
-		row++;
-	}
-}
-
-
-
-int smallest_number(t_data *a)
-{
-	int small;
+	int	small;
 
 	small = 0;
-
 	small = a->value;
-	while(a)
+	while (a)
 	{
-		if(a->value < small)
+		if (a->value < small)
 			small = a->value;
 		a = a->link;
 	}
-	
-	return(small);
+	return (small);
 }
 
-int find_index(t_data *head, int nb)
+int	find_index(t_data *head, int nb)
 {
-	int index = 1;
-	t_data *current = head;
+	int		index;
+	t_data	*current;
+
+	index = 1;
+	current = head;
 	while (current != NULL)
 	{
-		if(current->value == nb)
-			return index;
+		if (current->value == nb)
+			return (index);
 		index++;
 		current = current->link;
 	}
 	return (-1);
+}
+
+t_data	*free_stack(t_data *stack)
+{
+	t_data	*tmp;
+
+	while (stack)
+	{
+		tmp = stack;
+		tmp = stack->link;
+		free(stack);
+		stack = tmp;
+	}
+	return (0);
 }

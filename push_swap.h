@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:31:50 by ygunay            #+#    #+#             */
-/*   Updated: 2023/01/16 14:13:01 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/16 16:07:41 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ void	ft_radix(t_data **a, t_data **b);
 void	fill_index(t_data **a);
 void	move_smallest_to_b(t_data **a, t_data **b);
 t_data	*create_list(int ac, char **av);
+t_data	*free_stack(t_data *stack);
 
 #endif
