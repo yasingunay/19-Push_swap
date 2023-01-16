@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:31:50 by ygunay            #+#    #+#             */
-/*   Updated: 2023/01/16 16:07:41 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/16 17:10:52 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	add_at_end(t_data *a, int data);
 void	dup_check(t_data *a);
 int		is_sorted(t_data *a);
 int		find_index(t_data *head, int nb);
-void	print_list(t_data *a);
+//void	print_list(t_data *a);
 void	ft_rotate(t_data **a);
 void	ft_ra(t_data **a);
 void	ft_sa(t_data **a);
