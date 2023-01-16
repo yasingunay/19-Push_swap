@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:49:39 by ygunay            #+#    #+#             */
-/*   Updated: 2023/01/16 14:54:15 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/16 16:12:11 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	check_errors(int ac, char **av)
 		j = 0;
 		while (av[row][j])
 		{
-			c = av[row][j];	
+			c = av[row][j];
 			if (ft_isdigit(c) != 1)
 				ft_error("Not digit\n");
 			else

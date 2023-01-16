@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 08:06:57 by ygunay            #+#    #+#             */
-/*   Updated: 2022/12/01 12:10:52 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/16 16:11:12 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,6 @@ int	ft_atoi(const char *str)
 		if (result * sign < INT_MIN)
 			ft_error("Some arguments are smaller than an integer\n");
 	}
-	//if (str[i] || (sign == -1 && i == 1) || i == 0)
-		//ft_error("atoi error");
 	return (result * sign);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:21:33 by yasingunay        #+#    #+#             */
-/*   Updated: 2023/01/16 14:51:18 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/16 16:12:19 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,3 @@ void	add_at_end(t_data *a, int data)
 		ptr = ptr->link;
 	ptr->link = temp;
 }
-

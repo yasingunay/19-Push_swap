@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:30:01 by ygunay            #+#    #+#             */
-/*   Updated: 2023/01/16 16:09:40 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/16 16:12:42 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,16 @@ int	main(int ac, char **av)
 	return (0);
 }
 
-void	print_list(t_data *a)
-{
-	t_data	*ptr;
+// void	print_list(t_data *a)
+// {
+// 	t_data	*ptr;
 
-	if (a == NULL)
-		ft_error("list is empty");
-	ptr = a;
-	while (ptr != NULL)
-	{
-		ft_printf("%d ", ptr->value);
-		ptr = ptr->link;
-	}
-}
+// 	if (a == NULL)
+// 		ft_error("list is empty");
+// 	ptr = a;
+// 	while (ptr != NULL)
+// 	{
+// 		ft_printf("%d ", ptr->value);
+// 		ptr = ptr->link;
+// 	}
+// }
