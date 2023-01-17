@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:21:33 by yasingunay        #+#    #+#             */
-/*   Updated: 2023/01/16 16:12:19 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/17 10:03:26 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	add_at_end(t_data *a, int data)
 	t_data	*temp;
 
 	if (a == NULL)
-		ft_error("list is empty");
+		ft_error();
 	ptr = a;
 	temp = (t_data *)malloc(sizeof(t_data));
 	temp ->value = data;

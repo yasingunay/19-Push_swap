@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:31:50 by ygunay            #+#    #+#             */
-/*   Updated: 2023/01/16 17:10:52 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/17 10:03:09 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_data
 	struct s_data	*link;
 }	t_data;
 
-void	ft_error(char *error);
+void	ft_error(void);
 void	sort_list(t_data **a, t_data **b);
 void	ft_sb(t_data *b);
 int		biggest_number(t_data *a);

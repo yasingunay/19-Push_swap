@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:49:39 by ygunay            #+#    #+#             */
-/*   Updated: 2023/01/16 16:12:11 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/17 10:02:46 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	dup_check(t_data *a)
 			if (a->value == new->value)
 				dup++;
 			if (dup == 2)
-				ft_error("duplicated number\n");
+				ft_error();
 			new = new->link;
 		}
 		a = a->link;
@@ -60,7 +60,7 @@ void	check_errors(int ac, char **av)
 		{
 			c = av[row][j];
 			if (ft_isdigit(c) != 1)
-				ft_error("Not digit\n");
+				ft_error();
 			else
 				j++;
 		}
