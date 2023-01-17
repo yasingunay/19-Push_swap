@@ -6,7 +6,7 @@
 #    By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 15:42:42 by ygunay            #+#    #+#              #
-#    Updated: 2023/01/16 14:59:24 by ygunay           ###   ########.fr        #
+#    Updated: 2023/01/17 12:39:28 by ygunay           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCS		= main.c \
 			  sort.c \
 			  radix.c \
 			  operations_shorts.c \
-			  check_list.c
+			  check_list.c 
 
 NAME 		= push_swap
 

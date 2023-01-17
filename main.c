@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:30:01 by ygunay            #+#    #+#             */
-/*   Updated: 2023/01/16 17:11:07 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/17 12:40:06 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,8 @@ int	main(int ac, char **av)
 	if (is_sorted(a) == 1)
 		return (0);
 	sort_list(&a, &b);
-	//print_list(a);
 	free_stack(a);
 	free_stack(b);
 	//system("leaks push_swap");
 	return (0);
 }
-
-// void	print_list(t_data *a)
-// {
-// 	t_data	*ptr;
-
-// 	if (a == NULL)
-// 		ft_error("list is empty");
-// 	ptr = a;
-// 	while (ptr != NULL)
-// 	{
-// 		ft_printf("%d ", ptr->value);
-// 		ptr = ptr->link;
-// 	}
-// }

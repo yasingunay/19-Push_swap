@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:49:39 by ygunay            #+#    #+#             */
-/*   Updated: 2023/01/17 10:02:46 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/17 16:50:40 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,26 +44,51 @@ void	dup_check(t_data *a)
 	}
 }
 
+// void	check_errors(int ac, char **av)
+// {
+// 	int		j;
+// 	char	c;
+// 	int		row;
+
+// 	row = 1;
+// 	if (ac == 2)
+// 		row = row -1;
+// 	while (av[row])
+// 	{
+// 		j = 0;
+// 		while (av[row][j])
+// 		{
+// 			c = av[row][j];
+// 			if (ft_isdigit(c) != 1 || c == '$')
+// 			{
+// 				write(2, "k", 1);
+// 				ft_error();
+// 			}
+// 			else
+// 				j++;
+// 		}
+// 		row++;
+// 	}
+// }
+
 void	check_errors(int ac, char **av)
 {
-	int		j;
-	char	c;
-	int		row;
+	int	i;
+	int	j;
 
-	row = 1;
-	if (ac == 2)
-		row = row -1;
-	while (av[row])
+	if (ac >= 2)
 	{
-		j = 0;
-		while (av[row][j])
+		i = 1;
+		while (av[i] != NULL)
 		{
-			c = av[row][j];
-			if (ft_isdigit(c) != 1)
-				ft_error();
-			else
+			j = 0;
+			while (av[i][j] != '\0')
+			{
+				if (ft_isdigit(av[i][j]) != 1)
+					ft_error();
 				j++;
+			}
+			i++;
 		}
-		row++;
-	}
+	}	
 }
