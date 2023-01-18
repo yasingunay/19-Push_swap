@@ -6,7 +6,7 @@
 #    By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 15:42:42 by ygunay            #+#    #+#              #
-#    Updated: 2023/01/18 12:12:09 by ygunay           ###   ########.fr        #
+#    Updated: 2023/01/18 12:14:19 by ygunay           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,6 @@ MAKE		= make
 
 $(NAME):	$(OBJS)
 			$(MAKE) -C libft	
-			$(MAKE) -C ft_printf
 			$(CC) $(CFLAGS) -o $(NAME) $(OBJS) libft/libft.a 
 
 all:		$(NAME)
