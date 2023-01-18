@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:31:50 by ygunay            #+#    #+#             */
-/*   Updated: 2023/01/17 12:39:14 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/18 12:12:26 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-# include "ft_printf/ft_printf.h"
 
 # include <unistd.h>
 # include <stdio.h>
