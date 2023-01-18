@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 08:06:57 by ygunay            #+#    #+#             */
-/*   Updated: 2023/01/17 11:39:07 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/18 11:57:58 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,11 +84,11 @@ int	ft_atoi(const char *str)
 	{
 		result = result * 10 + str[i] - '0';
 		i++;
-		if (result * sign > INT_MAX)
-			ft_error();
-		if (result * sign < INT_MIN)
+		if (result * sign > INT_MAX || result * sign < INT_MIN)
 			ft_error();
 	}
+	if (str[i] || (sign == -1 && i == 1) || i == 0)
+		ft_error();
 	return (result * sign);
 }
 

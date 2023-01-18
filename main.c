@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:30:01 by ygunay            #+#    #+#             */
-/*   Updated: 2023/01/17 12:40:06 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/18 11:58:27 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	main(int ac, char **av)
 		return (0);
 	if (ac == 2)
 		av = ft_split(av[1], ' ');
-	check_errors(ac, av);
 	a = create_list(ac, av);
 	fill_index(&a);
 	dup_check(a);
@@ -31,6 +30,5 @@ int	main(int ac, char **av)
 	sort_list(&a, &b);
 	free_stack(a);
 	free_stack(b);
-	//system("leaks push_swap");
 	return (0);
 }
