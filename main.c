@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 15:30:01 by ygunay            #+#    #+#             */
-/*   Updated: 2023/01/18 11:58:27 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/18 18:25:28 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	main(int ac, char **av)
 		return (0);
 	if (ac == 2)
 		av = ft_split(av[1], ' ');
+	if (!av || !av[0])
+		ft_error();
 	a = create_list(ac, av);
 	fill_index(&a);
 	dup_check(a);

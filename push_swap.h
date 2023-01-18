@@ -6,7 +6,7 @@
 /*   By: ygunay <ygunay@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 16:31:50 by ygunay            #+#    #+#             */
-/*   Updated: 2023/01/18 12:12:26 by ygunay           ###   ########.fr       */
+/*   Updated: 2023/01/18 18:25:42 by ygunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "libft/libft.h"
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 
 # define INT_MIN -2147483648
